@@ -1,5 +1,5 @@
 # 61C Project 1: snek
-Due: July 8, 2025 23:59
+Due: July 9, 2025 23:59
 
 Spec: https://cs61c.org/su25/projects/proj1/
 
