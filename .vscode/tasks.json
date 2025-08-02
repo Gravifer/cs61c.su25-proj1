@@ -1,0 +1,131 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Snake Game",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "snake"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Build the snake executable"
+        },
+        {
+            "label": "Build Interactive Snake",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "interactive-snake"
+            ],
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Build the interactive snake executable"
+        },
+        {
+            "label": "Build All",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "all"
+            ],
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Build all targets (snake, interactive-snake, unit-tests, custom-tests)"
+        },
+        {
+            "label": "Build Unit Tests",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "unit-tests"
+            ],
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Build unit tests executable"
+        },
+        {
+            "label": "Run Unit Tests",
+            "type": "shell",
+            "command": "./unit-tests",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Build Unit Tests",
+            "detail": "Run unit tests executable",
+            "problemMatcher": []
+        },
+        {
+            "label": "Test free_game",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "valgrind-test-free-game"
+            ],
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Build Unit Tests",
+            "detail": "Run valgrind test for free_game function",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Integration Tests",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "run-integration-tests"
+            ],
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Run all integration tests"
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "clean"
+            ],
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "detail": "Clean build artifacts"
+        }
+    ]
+}
